@@ -11,7 +11,7 @@ const AuthRouter = require("./Routes/AuthRouter");
 
 // Router USe
 
-app.use("/signup", AuthRouter);
+app.use("/api/auth", AuthRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
