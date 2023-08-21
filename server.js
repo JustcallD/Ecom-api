@@ -8,10 +8,12 @@ require("./Config/Database");
 
 // Router import
 const AuthRouter = require("./Routes/AuthRouter");
+const userRouter = require("./Routes/userRouter");
 
 // Router USe
 
 app.use("/api/auth", AuthRouter);
+app.use("/api/user", userRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
