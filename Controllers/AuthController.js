@@ -30,7 +30,14 @@ const login = async (req, res) => {
     if (!user) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
-    const { password, ...others } = user._doc;
+
+    if (password !== user.password) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const { Password, ...others } = user._doc;
+
+    // const { password, ...others } = user._doc;
 
     // const token = generateToken(user);
 
